@@ -1,0 +1,16 @@
+[Unit]
+Description={{ app_name }} Spring Boot service
+After=network.target
+
+[Service]
+User={{ app_user }}
+Group={{ app_group }}
+Environment=SERVER_PORT={{ app_port }}
+Environment=APP_ENVIRONMENT={{ app_environment }}
+ExecStart=/usr/bin/java -jar {{ install_dir }}/todo-api.jar
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

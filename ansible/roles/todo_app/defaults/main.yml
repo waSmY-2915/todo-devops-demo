@@ -1,0 +1,10 @@
+---
+app_name: todo-api
+app_user: todoapi
+app_group: todoapi
+app_port: 8080
+app_environment: ansible
+install_dir: /opt/todo-api
+java_package: openjdk-17-jre-headless
+# Jar built by `make build` (run it before the playbook)
+app_jar_src: "{{ playbook_dir }}/../target/todo-api.jar"
