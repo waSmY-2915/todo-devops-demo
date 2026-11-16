@@ -78,7 +78,28 @@ git commit -am "feat: ..." && git push -u origin feature/hello-endpoint
 git checkout main && git pull
 git log --oneline --graph --all        # screenshot this for the report
 ```
-Add your course coordinator under repo Settings -> Collaborators, and put the repo URL in `repo_link.txt`.
+## Report Screenshot Checklist & Submission Requirements
+
+### Component 1: Git + Maven + Jenkins
+* [ ] `git log --oneline --graph --all` showing branches (`feature/todo-api`, `feature/ci-pipeline`, `feature/k8s-ansible`) and merge commits into `main`.
+* [ ] Jenkins job configuration (SCM source, polling trigger, build steps).
+* [ ] Successful build console output.
+* [ ] Archived artifact `todo-api.jar`.
+* [ ] CI enhancement: Test stage passing, image tag formatted as `<build#>-<sha>`, and GitHub Actions run workflow execution.
+
+### Component 2: Ansible + Docker + Kubernetes
+* [ ] `ansible-playbook` command execution and successful play output.
+* [ ] Multi-stage `Dockerfile` and successful Docker build output.
+* [ ] `kubectl get pods` output demonstrating rolling scaling (`3` $\rightarrow$ `5` $\rightarrow$ `3` replicas).
+* [ ] `kubectl get svc` showing the active Kubernetes service.
+* [ ] `curl` endpoint response from the service (via `make smoke`).
+* [ ] Kubernetes enhancements: liveness/readiness probes in Deployment YAML, ConfigMap applied, and successful rollback output (`kubectl rollout undo`).
+
+### Final Deliverables & Submissions
+* [ ] **Source Folder:** Complete project files and directories cleanly organized.
+* [ ] **Repository Link File:** `repo_link.txt` containing your GitHub repository URL.
+* [ ] **Report Link:** GitHub repository URL pasted into `docs/REPORT_CHECKLIST.md`.
+* [ ] **Collaborator:** Course coordinator added under repository **Settings > Collaborators**..
 
 ## Enhancements implemented
 - CI: automated tests stage + build-number/commit-SHA image versioning + GitHub Actions alongside Jenkins
@@ -91,3 +112,4 @@ See `docs/REPORT_CHECKLIST.md` for the screenshots to capture.
 - Built a REST API (todo CRUD with health endpoints) and automated build + test with Jenkins on every Git push, plus GitHub Actions CI; tagged images by build number and commit SHA.
 - Containerized with a multi-stage Dockerfile and deployed on Kubernetes (3 replicas, Service, ConfigMap, liveness/readiness probes) with scaling and rollback demos; automated server setup with an Ansible role, variables and handlers.
 # Update K8s
+
