@@ -1,0 +1,9 @@
+---
+- name: Configure server and deploy the Todo API as a service
+  hosts: app_servers
+  become: true
+  vars:
+    app_port: 8080            # variable (overrides the role default)
+    app_environment: ansible
+  roles:
+    - todo_app
