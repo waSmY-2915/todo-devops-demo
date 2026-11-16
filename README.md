@@ -90,3 +90,4 @@ See `docs/REPORT_CHECKLIST.md` for the screenshots to capture.
 - **Todo API - CI/CD Pipeline & Kubernetes Deployment** | Java 17, Spring Boot, Git, Jenkins, Docker, Ansible, Kubernetes
 - Built a REST API (todo CRUD with health endpoints) and automated build + test with Jenkins on every Git push, plus GitHub Actions CI; tagged images by build number and commit SHA.
 - Containerized with a multi-stage Dockerfile and deployed on Kubernetes (3 replicas, Service, ConfigMap, liveness/readiness probes) with scaling and rollback demos; automated server setup with an Ansible role, variables and handlers.
+# Update CI
